@@ -6,7 +6,7 @@ public class MathMateCalculator extends javax.swing.JFrame {
     public MathMateCalculator() {
         initComponents();
        String data = "tan(3)";
-    double result = evaluateExpression(data); // Evaluate the expression
+    double result = evaluateExpression(data); 
     System.out.println(result);
         
     }
@@ -36,7 +36,7 @@ private static double evaluateExpression(String expression) {
             i--;
             double value = Double.parseDouble(sb.toString());
             values.push(value);
-        } else if (Character.isAlphabetic(tokens[i])) { // Handle trigonometric functions
+        } else if (Character.isAlphabetic(tokens[i])) { 
             StringBuilder sb = new StringBuilder();
             while (i < tokens.length && Character.isAlphabetic(tokens[i])) {
                 sb.append(tokens[i]);
@@ -111,7 +111,7 @@ private static double evaluateExpression(String expression) {
     
 }
 private static double computeTrigonometric(String functionName, double operand) {
-    // Convert degrees to radians if the function is trigonometric
+   
     double angle = functionName.equals("sin") || functionName.equals("cos") || functionName.equals("tan") ?
             Math.toRadians(operand) : operand;
 
@@ -169,7 +169,7 @@ private static double applyOperator(char operator, double b, double a) {
             }
             return a / b;
         case '^':
-            return Math.pow(a, b); // Exponentiation calculation using Math.pow()
+            return Math.pow(a, b);
         default:
             throw new IllegalArgumentException("Invalid operator: " + operator);
     }
@@ -178,11 +178,11 @@ private static double applyOperator(char operator, double b, double a) {
 
     private boolean isValidNumericExpression(String expression) {
     try {
-        // Attempt to parse the expression as a double
+        
         Double.parseDouble(expression);
         return true;
     } catch (NumberFormatException e) {
-        // If parsing fails, the expression is not a valid numeric expression
+        
         return false;
     }
 }
@@ -194,7 +194,7 @@ private static double applyOperator(char operator, double b, double a) {
     return text.contains(".");
 }
     private boolean hasOperator(String text) {
-    // Check if the text ends with an operator
+    
     return !text.isEmpty() && isOperator(text.charAt(text.length() - 1));
 }
     @SuppressWarnings("unchecked")
@@ -233,6 +233,8 @@ private static double applyOperator(char operator, double b, double a) {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
         Solution.setEditable(false);
         Solution.setBackground(new java.awt.Color(255, 255, 255));
@@ -525,6 +527,7 @@ private static double applyOperator(char operator, double b, double a) {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 2, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("MathMate Calculator");
 
         Exponential.setBackground(new java.awt.Color(204, 204, 204));
@@ -538,8 +541,11 @@ private static double applyOperator(char operator, double b, double a) {
             }
         });
 
+        ReturnEquationButton.setBackground(new java.awt.Color(204, 204, 204));
         ReturnEquationButton.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        ReturnEquationButton.setForeground(new java.awt.Color(0, 0, 0));
         ReturnEquationButton.setText("<");
+        ReturnEquationButton.setBorder(null);
         ReturnEquationButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ReturnEquationButtonActionPerformed(evt);
@@ -550,9 +556,6 @@ private static double applyOperator(char operator, double b, double a) {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -560,28 +563,25 @@ private static double applyOperator(char operator, double b, double a) {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Four, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(One, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(Four, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(One, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Five, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(Five, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Six, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(Two, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Three, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(Six, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(Zero, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Two, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Decimal, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(Three, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Seven, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Zero, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Decimal, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Seven, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Eight, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -599,6 +599,12 @@ private static double applyOperator(char operator, double b, double a) {
                                     .addComponent(Multiplication, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(Addition, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(ClosePar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(ReturnEquationButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(Sine, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -612,29 +618,35 @@ private static double applyOperator(char operator, double b, double a) {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Clear, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(ReturnEquationButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(Clear, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Solution, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(ReturnEquationButton)
+                .addComponent(Solution, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ReturnEquationButton, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Tangent, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Cosine, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Sine, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Exponential, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Percentage, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Sine, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(Tangent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(Percentage, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(Exponential, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addGap(1, 1, 1))
+                                        .addComponent(Cosine, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Seven, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -644,9 +656,7 @@ private static double applyOperator(char operator, double b, double a) {
                                 .addComponent(ClosePar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(OpenPar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -684,16 +694,11 @@ private static double applyOperator(char operator, double b, double a) {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 10, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -794,7 +799,7 @@ private static double applyOperator(char operator, double b, double a) {
        String btn1 = "/";
     String currentText = Solution.getText();
     
-    // Check if an operator has already been added
+    
     if (!operatorAdded) {
         Solution.setText(currentText + btn1);
         operatorAdded = true;
@@ -805,7 +810,7 @@ private static double applyOperator(char operator, double b, double a) {
           String btn1 = "*";
     String currentText = Solution.getText();
     
-    // Check if an operator has already been added
+    
     if (!operatorAdded) {
         Solution.setText(currentText + btn1);
         operatorAdded = true;
@@ -816,7 +821,7 @@ private static double applyOperator(char operator, double b, double a) {
         String btn1 = "-";
     String currentText = Solution.getText();
     
-    // Check if an operator has already been added
+   
     if (!operatorAdded) {
         Solution.setText(currentText + btn1);
         operatorAdded = true;
@@ -827,7 +832,7 @@ private static double applyOperator(char operator, double b, double a) {
          String btn1 = "+";
     String currentText = Solution.getText();
     
-    // Check if an operator has already been added
+    
     if (!operatorAdded) {
         Solution.setText(currentText + btn1);
         operatorAdded = true;
@@ -845,12 +850,12 @@ private static double applyOperator(char operator, double b, double a) {
     String btn1 = "%";
     String currentText = Solution.getText();
 
-    // Check if the current text is empty or ends with an operator
+   
     if (currentText.isEmpty() || isOperator(currentText.charAt(currentText.length() - 1))) {
-        // Append "0" before the decimal point to handle cases like "* .5"
+        
         Solution.setText(currentText + "0" + btn1);
     } else if (!currentText.endsWith(btn1) && !hasDecimalPoint(currentText)) {
-        // Append the "." character to the current text if it's not already ending with "." and there's no existing decimal point
+        
         Solution.setText(currentText + btn1);
     }
     }//GEN-LAST:event_PercentageActionPerformed
@@ -859,14 +864,14 @@ private static double applyOperator(char operator, double b, double a) {
    String btn1 = ".";
     String currentText = Solution.getText();
 
-    // Check if the current text is empty or ends with an operator
+    
     if (currentText.isEmpty() || isOperator(currentText.charAt(currentText.length() - 1))) {
-        // Append "0" before the decimal point to handle cases like "* .5"
+       
         Solution.setText(currentText + "0" + btn1);
     } else if (currentText.matches(".*\\d*\\.\\d*$")) {
-        // If the current text already contains a decimal point and a digit after it, do nothing
+       
     } else {
-        // Append the "." character to the current text
+        
         Solution.setText(currentText + btn1);
     }      
          
@@ -876,7 +881,7 @@ private static double applyOperator(char operator, double b, double a) {
     private void SolutionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SolutionKeyTyped
       char typedChar = evt.getKeyChar();
 
-    // Check if the typed character is a valid digit, operator, or decimal point
+    
     if (Character.isDigit(typedChar) || isOperator(typedChar) || typedChar == '.') {
         String data = Solution.getText() + typedChar;
         double result = evaluateExpression(data);
@@ -888,7 +893,7 @@ private static double applyOperator(char operator, double b, double a) {
     private void SolutionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SolutionKeyReleased
  char typedChar = evt.getKeyChar();
 
-    // Check if the typed character is a valid digit, operator, or decimal point
+    
     if (Character.isDigit(typedChar) || isOperator(typedChar) || typedChar == '.') {
         String data = Solution.getText() + typedChar;
         double result = evaluateExpression(data);
@@ -898,7 +903,7 @@ private static double applyOperator(char operator, double b, double a) {
     }//GEN-LAST:event_SolutionKeyReleased
 
     private void SolutionFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SolutionFocusGained
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_SolutionFocusGained
 
     private void SolutionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_SolutionFocusLost
@@ -908,9 +913,9 @@ private static double applyOperator(char operator, double b, double a) {
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
   String currentText = Solution.getText();
     
-    // Check if the text is not empty before deleting
+    
     if (!currentText.isEmpty()) {
-        // Remove the last character from the text
+       
         String newText = currentText.substring(0, currentText.length() - 1);
         Solution.setText(newText);
     }
@@ -920,7 +925,7 @@ private static double applyOperator(char operator, double b, double a) {
     String btn1 = "tan(";
     String currentText = Solution.getText();
     
-    // Add sin function to the expression
+    
     Solution.setText(currentText + btn1);
     operatorAdded = false; // Reset t
     }//GEN-LAST:event_TangentActionPerformed
@@ -929,7 +934,7 @@ private static double applyOperator(char operator, double b, double a) {
     String btn1 = "cos(";
     String currentText = Solution.getText();
     
-    // Add sin function to the expression
+    
     Solution.setText(currentText + btn1);
     operatorAdded = false; // Reset t
     }//GEN-LAST:event_CosineActionPerformed
@@ -938,7 +943,7 @@ private static double applyOperator(char operator, double b, double a) {
     String btn1 = ")";
     String currentText = Solution.getText();
     
-    // Check if an operator has already been added
+   
     if (!operatorAdded) {
         Solution.setText(currentText + btn1);
         operatorAdded = false;
@@ -949,7 +954,7 @@ private static double applyOperator(char operator, double b, double a) {
        String btn1 = "(";
     String currentText = Solution.getText();
     
-    // Check if an operator has already been added
+    
     if (!operatorAdded) {
         Solution.setText(currentText + btn1);
         operatorAdded = true;
@@ -959,12 +964,12 @@ private static double applyOperator(char operator, double b, double a) {
     private void ExponentialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExponentialActionPerformed
         String currentText = Solution.getText();
         
-        //Append the exponentiation operator (^) to the current text
+        
         Solution.setText(currentText + "^");
     }//GEN-LAST:event_ExponentialActionPerformed
 
     private void SolutionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SolutionActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_SolutionActionPerformed
     
     private void ReturnEquationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnEquationButtonActionPerformed
@@ -974,7 +979,7 @@ private static double applyOperator(char operator, double b, double a) {
 
     
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -998,7 +1003,7 @@ private static double applyOperator(char operator, double b, double a) {
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MathMateCalculator().setVisible(true);

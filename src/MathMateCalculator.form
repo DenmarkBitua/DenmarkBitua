@@ -24,69 +24,58 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel1" alignment="1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="33" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="103" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Solution" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="Four" min="-2" pref="60" max="-2" attributes="0"/>
-                                              <Component id="One" alignment="1" min="-2" pref="60" max="-2" attributes="0"/>
-                                          </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="Four" max="32767" attributes="0"/>
+                                      <Component id="One" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="Five" min="-2" pref="60" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="Five" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Six" min="-2" pref="60" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="Two" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="Three" min="-2" pref="60" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
+                                          <Component id="Six" min="-2" pref="60" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="Zero" min="-2" pref="126" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="Two" min="-2" pref="60" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Decimal" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <Component id="Three" min="-2" pref="60" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="Zero" min="-2" pref="126" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Decimal" min="-2" pref="60" max="-2" attributes="0"/>
+                              </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="Seven" max="32767" attributes="0"/>
+                                  <Component id="Seven" min="-2" pref="61" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Eight" min="-2" pref="61" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -111,6 +100,14 @@
                               </Group>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="103" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="ReturnEquationButton" min="-2" pref="57" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="Sine" min="-2" pref="57" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -124,11 +121,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="Delete" min="-2" pref="52" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Clear" pref="58" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="ReturnEquationButton" min="-2" pref="57" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="Clear" pref="70" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -138,20 +131,34 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Solution" min="-2" pref="63" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="ReturnEquationButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="Solution" min="-2" pref="71" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="ReturnEquationButton" min="-2" pref="22" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Tangent" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="Cosine" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="Sine" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="Exponential" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="Percentage" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="Delete" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="Sine" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="Tangent" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="Percentage" min="-2" pref="48" max="-2" attributes="0"/>
+                                                  <Component id="Exponential" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="Cosine" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -165,10 +172,7 @@
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Clear" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Component id="Delete" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="Clear" min="-2" pref="48" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -722,6 +726,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Historic" size="10" style="2"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="MathMate Calculator"/>
           </Properties>
         </Component>
@@ -747,10 +754,19 @@
         </Component>
         <Component class="javax.swing.JButton" name="ReturnEquationButton">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Historic" size="12" style="1"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="&lt;"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ReturnEquationButtonActionPerformed"/>
